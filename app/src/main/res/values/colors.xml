@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="wm_teal">#FF00CDBE</color>
+    <color name="wm_moss">#FF00A8A3</color>
+    <color name="wm_white">#FFFFFFFF</color>
+    <color name="wm_raspberry">#FFD93A4B</color>
+    <color name="wm_peppercorn">#FF252935</color>
+</resources>

@@ -1,0 +1,107 @@
+[versions]
+
+## GRADLE VERSIONS ##
+androidGradlePlugin = "8.1.4"
+
+## VERSION CONSTANTS ##
+applicationName = "com.weedmaps.challenge"
+compileSdk = "34"
+minSdk = "24"
+targetSdk = "34"
+applicationVersion = "1"
+applicationVersionName = "1.0"
+
+## COIL VERSIONS ##
+coil = "2.6.0"
+
+## COMPOSE VERSIONS ##
+compose-activity = "1.8.2"
+compose-bom = "2024.02.01"
+
+## GSON VERSIONS ##
+gson = "2.10.1"
+
+## KOIN VERSIONS ##
+koin = "3.2.2"
+koin_compose = "3.2.1"
+
+## KOTLIN VERSIONS ##
+kotlin = "1.9.0"
+kotlin-compiler = "1.5.1"
+kotlin-extensions = "1.12.0"
+kotlin-coroutines = "1.8.0"
+
+## LIFECYCLE VERSIONS ##
+lifecycle = "2.7.0"
+
+## RETROFIT VERSIONS ##
+retrofit = "2.9.0"
+retrofit-gson = "2.9.0"
+
+## UNIT/INSTRUMENTATION TEST VERSIONS ##
+junit = "4.13.2"
+ext-junit = "1.1.5"
+espresso = "3.5.1"
+mockk = "1.13.10"
+
+[libraries]
+
+## GRADLE DEPENDENCIES ##
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+
+## COIL DEPENDENCIES ##
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+
+## COMPOSE DEPENDENCIES ##
+compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
+compose-ui = { group = "androidx.compose.ui", name = "ui"}
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+compose-junit = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+
+## GSON DEPENDENCIES ##
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+
+## KOIN DEPENDENCIES ##
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin_compose" }
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-test = { group = "io.insert-koin", name = "koin-test-junit4", version.ref = "koin" }
+
+## KOTLIN DEPENDENCIES ##
+kotlin-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
+kotlin-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlin-coroutines" }
+kotlin-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlin-coroutines" }
+kotlin-extensions = { group = "androidx.core", name = "core-ktx", version.ref = "kotlin-extensions" }
+
+## LIFECYCLE DEPENDENCIES ##
+lifecycle-scope = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+
+## RETROFIT DEPENDENCIES ##
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit-gson" }
+
+## UNIT/INSTRUMENTATION TEST DEPENDENCIES ##
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "ext-junit" }
+espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+
+[bundles]
+compose = ["compose-material3", "compose-ui", "compose-activity"]
+compose-debug = ["compose-ui-tooling"]
+retrofit = ["retrofit", "retrofit-gson"]
+koin = ["koin-android", "koin-compose", "koin-core"]
+kotlin = ["kotlin-extensions", "kotlin-coroutines", "kotlin-coroutines-android"]
+lifecycle = ["lifecycle-scope"]
+unit-testing = ["mockk", "koin-test", "junit", "ext-junit", "compose-junit", "kotlin-coroutines-test"]
+instrumentation-testing = ["espresso"]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

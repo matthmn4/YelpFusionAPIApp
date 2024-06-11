@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Weedmaps Coding Challenge</string>
+    <string name="greeting">"Welcome to the Weedmaps Android Coding Challenge!"</string>
+    <string name="title_activity_splash">SplashActivity</string>
+</resources>
