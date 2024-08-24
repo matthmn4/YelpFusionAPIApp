@@ -1,4 +1,4 @@
-package com.weedmaps.challenge.yelp
+package com.weedmaps.challenge.data.models
 
 import com.google.gson.annotations.SerializedName
 

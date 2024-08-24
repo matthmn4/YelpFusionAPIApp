@@ -1,21 +1,23 @@
-package com.weedmaps.challenge.yelp
+package com.weedmaps.challenge.data.respository
 
 import android.util.Log
-import com.weedmaps.challenge.network.RetrofitClient
+import com.weedmaps.challenge.data.models.ReviewResponse
+import com.weedmaps.challenge.data.models.SearchResponse
+import com.weedmaps.challenge.data.network.RetrofitInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
+import javax.inject.Singleton
 
-object YelpHelper {
+@Singleton
+class YelpRepository @Inject constructor(private val retrofitInterface: RetrofitInterface) {
 
     private val TAG = this::class.simpleName
-    private const val KEY:
-            String = "Bearer n0ju-XhvEen3ms1hGCe_PT4wOy8KvcUWTIhc7kf7eOlc4qjC5f29G2cDwN3rfpXmyFSXVaDvJ3FpUYWulSJoYsw-KjjkkhTpquUY5XYbHGd-jOkuhs4zSTcAvbJjZnYx"
-
     fun callYelpSearchAPI(latitude: Double, longitude: Double, searchTerm: String, limit: Int,
                           responseCallback: (successResponse: SearchResponse?) -> Unit) {
         val call: Call<SearchResponse> =
-            RetrofitClient.getRetrofitClient().getSearchResults(KEY, latitude, longitude, searchTerm, true, "distance", limit)
+            retrofitInterface.getSearchResults(API_KEY, latitude, longitude, searchTerm, true, "distance", limit)
         call.enqueue(object : Callback<SearchResponse> {
             override fun onResponse(
                 call: Call<SearchResponse>,
@@ -42,7 +44,7 @@ object YelpHelper {
     fun callYelpSearchAPI(location: String, searchTerm: String, limit: Int,
                           responseCallback: (successResponse: SearchResponse?) -> Unit) {
         val call: Call<SearchResponse> =
-            RetrofitClient.getRetrofitClient().getSearchResults(KEY, location, searchTerm, true, "distance", limit)
+            retrofitInterface.getSearchResults(API_KEY, location, searchTerm, true, "distance", limit)
         call.enqueue(object : Callback<SearchResponse> {
             override fun onResponse(
                 call: Call<SearchResponse>,
@@ -68,7 +70,7 @@ object YelpHelper {
 
     fun callYelpReviewAPI(businessId: String, responseCallback: (successResponse: ReviewResponse?) -> Unit) {
         val call: Call<ReviewResponse> =
-            RetrofitClient.getRetrofitClient().getBusinessReviews(KEY, businessId, "yelp_sort")
+            retrofitInterface.getBusinessReviews(API_KEY, businessId, "yelp_sort")
         call.enqueue(object : Callback<ReviewResponse> {
             override fun onResponse(
                 call: Call<ReviewResponse>,
@@ -92,5 +94,8 @@ object YelpHelper {
             }
 
         })
+    }
+    companion object {
+        private const val API_KEY = "Bearer n0ju-XhvEen3ms1hGCe_PT4wOy8KvcUWTIhc7kf7eOlc4qjC5f29G2cDwN3rfpXmyFSXVaDvJ3FpUYWulSJoYsw-KjjkkhTpquUY5XYbHGd-jOkuhs4zSTcAvbJjZnYx"
     }
 }

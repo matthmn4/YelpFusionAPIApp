@@ -1,4 +1,4 @@
-package com.weedmaps.challenge
+package com.weedmaps.challenge.ui.viewmodel
 
 import android.content.Context
 

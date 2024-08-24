@@ -1,4 +1,4 @@
-package com.weedmaps.challenge.yelp
+package com.weedmaps.challenge.ui.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -25,6 +25,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.weedmaps.challenge.data.models.BusinessWithReview
 
 @Composable
 fun BusinessCard(businessWithReview: BusinessWithReview) {

@@ -1,7 +1,7 @@
-package com.weedmaps.challenge.network
+package com.weedmaps.challenge.data.network
 
-import com.weedmaps.challenge.yelp.ReviewResponse
-import com.weedmaps.challenge.yelp.SearchResponse
+import com.weedmaps.challenge.data.models.ReviewResponse
+import com.weedmaps.challenge.data.models.SearchResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -44,4 +44,5 @@ interface RetrofitInterface {
         @Path("id") businessId: String,
         @Query("sort_by") sortBy: String,
     ): Call<ReviewResponse>
+
 }

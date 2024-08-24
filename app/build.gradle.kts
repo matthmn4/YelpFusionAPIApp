@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -85,6 +87,8 @@ dependencies {
 
     implementation("com.squareup.okhttp3:logging-interceptor:4.7.2")
     debugImplementation(libs.ui.test.manifest)
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-compiler:2.44")
 
 
 }

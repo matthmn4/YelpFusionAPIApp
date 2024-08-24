@@ -1,4 +1,4 @@
-package com.weedmaps.challenge.yelp
+package com.weedmaps.challenge.ui.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -37,9 +37,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.PopupProperties
-import com.weedmaps.challenge.SuggestionsHelper.addStringToSuggestions
-import com.weedmaps.challenge.SuggestionsHelper.clearSuggestions
-import com.weedmaps.challenge.SuggestionsHelper.getSuggestionsFromPreferences
+import com.weedmaps.challenge.ui.viewmodel.SuggestionsHelper.addStringToSuggestions
+import com.weedmaps.challenge.ui.viewmodel.SuggestionsHelper.clearSuggestions
+import com.weedmaps.challenge.ui.viewmodel.SuggestionsHelper.getSuggestionsFromPreferences
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

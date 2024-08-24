@@ -43,6 +43,7 @@ junit = "4.13.2"
 ext-junit = "1.1.5"
 espresso = "3.5.1"
 mockk = "1.13.10"
+hilt = "2.44"
 
 [libraries]
 
@@ -105,3 +106,4 @@ instrumentation-testing = ["espresso"]
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+hilt-android = {id = "com.google.dagger.hilt.android", version.ref = "hilt"}
